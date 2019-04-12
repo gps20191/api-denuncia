@@ -8,7 +8,7 @@
     "start": "node server.js",
     "test": "node ace test",
     "heroku-postbuild": "npm run prestart:prod",
-    "start:heroku": "node dist/main.js"
+    "start:heroku": "npm run start"
   },
   "keywords": [
     "adonisjs",
