@@ -1,0 +1,26 @@
+language: node_js
+node_js:
+- "node"
+#addons:
+#  sonarcloud:
+#    organization: "$SONAR_ORGANIZATION"
+#    token:
+#      secure: "$SONAR_TOKEN"
+install:
+- npm install
+script:
+- npm run test
+- npm run test:e2e
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: "$HEROKU_API_KEY"
+  on:
+    tags: true
+    repo: gps20191/api-denuncia
+    branches:    
+      only:      
+        - master
+  app:
+    develop: api-denunciav
