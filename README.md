@@ -7,7 +7,7 @@
 
 ### Diagrama ER
 <p align="center">
-    <img src="https://github.com/gps20191/api-denuncia/blob/master/documentation/Modelo-ER.png?raw=true">
+    <img src="https://github.com/gps20191/api-denuncia/blob/master/documentation/Modelo%20ER%20BD.png?raw=true">
 </p>
 
 # Adonis API application
