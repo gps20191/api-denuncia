@@ -1,3 +1,15 @@
+# Modelagem
+
+### Diagrama de Classes
+<p align="center">
+    <img src="https://github.com/gps20191/api-denuncia/blob/master/documentation/App-denuncia%20Class%20Diagram.png?raw=true">
+</p>
+
+### Diagrama ER
+<p align="center">
+    <img src="https://github.com/gps20191/api-denuncia/blob/master/documentation/Modelo-ER.png?raw=true">
+</p>
+
 # Adonis API application
 
 This is the boilerplate for creating an API server in AdonisJs, it comes pre-configured with.
