@@ -8,7 +8,8 @@
     "start": "ENV_SILENT=true node server.js",
     "test": "node ace test",
     "heroku-postbuild": "npm run prestart:prod",
-    "start:heroku": "npm run start"
+    "start:heroku": "npm run start",
+    "dev": "adonis serve --dev --debug"
   },
   "keywords": [
     "adonisjs",
@@ -26,7 +27,7 @@
     "@adonisjs/framework": "^5.0.9",
     "@adonisjs/ignitor": "^2.0.8",
     "@adonisjs/lucid": "^6.1.3",
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "imgur": "^0.3.1",
     "pg": "^7.10.0"
   },

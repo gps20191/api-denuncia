@@ -16,6 +16,10 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
+Route.get('/', () => {
+  return { greeting: 'Welcome to API-denuncia!' }
+})
+
 Route.group(() => {
   Route.post('complaint' ,'ComplaintController.store')
 }).prefix('api/v1')
