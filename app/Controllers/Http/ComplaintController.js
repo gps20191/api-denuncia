@@ -45,10 +45,10 @@ class ComplaintController {
         }
       }
       
-      return response.send(responseDataObj)
+      return response.status(responseDataObj.status).send(responseDataObj)
     }
 
-    return response.send({
+    return response.status(responseImgurData.status).send({
       message: "An error has occurred while uploading the image on imgur.",
       status: responseImgurData.status,
     })
