@@ -2,6 +2,7 @@
 const https = use('https')
 const axios = use('axios')
 const imgurUpload = 'https://api.imgur.com/3/upload'
+const urlApiRecognition = 'https://api-process.herokuapp.com/process'
 const Env = use('Env')
 const Image = use('App/Models/Image')
 
@@ -44,10 +45,30 @@ class ComplaintController {
           status: 500,
         }
       }
+      const recognitionData = {
+        idphoto: imageData.id,
+        urlphoto: imageData.url,
+        latitude: requestData.latitude,
+        longitude: requestData.longitude,
+        requestdate: requestData.data_envio,
+        numbus:requestData.linha_onibus,
+        blobimg: base64StringImage
+      }
+
+      const apiResponse = await axios.post(urlApiRecognition, recognitionData)
+      const { data: apiResponseData } = await apiResponse
+
+
+      if (!apiResponseData) {
+        return response.status(apiResponseData.status).send({
+          message: "An error has occurred while uploading the image on Recongnition Api.",
+          status: apiResponseData.status,
+        })
+      }
       
       return response.status(responseDataObj.status).send(responseDataObj)
-    }
 
+    }
     return response.status(responseImgurData.status).send({
       message: "An error has occurred while uploading the image on imgur.",
       status: responseImgurData.status,
